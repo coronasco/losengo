@@ -31,9 +31,12 @@ header
     top: 0
     left: 0
     width: 100%
-    background: $black
+    background: none
     transition: all .3s
     z-index: 999
+
+    @include md
+        background: $black
 
     &.active 
         background: $black
@@ -42,6 +45,10 @@ header
         height: 100px
         transition: all .3s ease-in-out
         overflow: hidden
+        border-bottom: 1px solid #434343
+
+        @include md
+            border-bottom: none
 
         &.active
             height: 100vh

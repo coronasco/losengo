@@ -3,40 +3,21 @@
     height: 100vh
     display: flex
     align-items: center
-    
-    .image
-        position: absolute
-        top: 0
-        right: 0
-        height: 100vh
-        width: 50%
-        z-index: 0
-        overflow: hidden
-        clip-path: polygon(10% 0, 100% 0%, 100% 100%, 0 100%)
 
-        img
-            height: 100%
-            object-fit: cover
-            object-position: center
-            
+    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0, 0, 0, 0.6)), url('../../immagini/losengo.jpg')
+    background-size: cover
+    background-position: center
 
-    @include lg
-        background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0, 0, 0, 0.6)), url('../../immagini/losengo.jpg')
-        background-size: cover
-        background-position: center
-
-        .image
-            display: none
 
     .hero
         h1
             width: 50%
-            color: $dark
+            color: $light
             font-size: 74px
 
             @include lg
                 font-size: 44px
-                color: $light
+                width: 100%
 
         span
             font-size: 22px
@@ -46,3 +27,91 @@
             padding: 10px 0 20px 0
         p 
             color: $light
+
+        hr
+            border: none
+            height: 3px
+            width: 20%
+            background: $orange
+            margin: 20px 0 10px 0
+
+        .cta
+            width: 280px
+            text-align: center
+
+            a
+                display: block
+                margin: 30px 0 0 0 
+                background: $orange
+                color: $light
+                padding: 20px
+                font-weight: bold
+                -webkit-box-shadow: 0px 10px 32px -13px #000000
+                box-shadow: 0px 10px 32px -13px #000000
+                transition: all .3s ease-in-out
+
+                &:hover
+                    transform: translateY(-5px)
+                    -webkit-box-shadow: 0px 0px 32px -13px #000000
+                    box-shadow: 0px 0px 32px -13px #000000
+
+//HOME INFO
+#info
+    margin-top: -130px
+
+    @include lg
+        margin-top: 0
+        padding-top: 50px
+        background: rgba(0,0,0,.7)
+
+    .info-wrapper
+        background: rgba(0,0,0,.7)
+        height: 130px
+
+        @include lg
+            height: auto
+            background: none
+        ul
+            display: grid
+            grid-template-columns: 1fr 1fr 1fr
+
+            @include lg
+                grid-template-columns: 1fr 1fr
+
+            @include md
+                grid-template-columns: 1fr
+
+            li
+                color: $light
+                border-right: 3px solid #2d2d2d
+                height: 130px
+                padding: 10px 20px
+                transition: all .3s ease-in-out
+
+                &:last-child
+                    border-right: none
+
+                &:hover
+                    background: #111
+
+                @include lg
+                    border-right: none
+                
+            h2, h3
+                margin-bottom: 15px
+                padding-bottom: 10px
+                border-bottom: 1px solid #2d2d2d
+            p
+                color: $mid-light
+                display: flex
+                align-items: center
+
+                span, a
+                    font-weight: bold
+                    color: $light
+                    font-size: 14px
+                    margin: 0 5px
+
+                svg
+                    width: 20px
+                    
